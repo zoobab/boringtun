@@ -6,7 +6,7 @@
 use jni;
 
 #[cfg(target_os = "android")]
-pub mod cfjni;
+pub mod jni;
 pub mod crypto;
 pub mod ffi;
 pub mod noise;
