@@ -92,7 +92,6 @@ jobs:
     - script: rustup target add x86_64-unknown-linux-gnu
     - script: |
         sudo apt update -y
-      displayName: "Install musl-tools"
     - script: |
         set -ex
         cargo build --target x86_64-unknown-linux-gnu --release
@@ -129,7 +128,7 @@ jobs:
           mkdir -p tmp/$name
           cp README.md \
             LICENSE.md \
-            tmp/$src/boringtun* \
+            tmp/$src/dist_$src/boringtun \
             tmp/$name/
           chmod +x tmp/$name/boringtun*
           tar czvf gh-release/$name.tar.gz -C tmp $name
